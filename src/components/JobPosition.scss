@@ -1,0 +1,90 @@
+@import "../base.scss";
+
+.job-position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.job-position-info {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid $grey-800;
+}
+
+.job-position-avatar {
+  position: absolute;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+}
+
+.job-position-body {
+  display: flex;
+  flex-direction: column;
+  .badge {
+    font-size: 10px;
+  }
+}
+
+.job-position-company {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  h3 {
+    margin: 0;
+    font-size: $fs-normal;
+    color: $primary;
+    font-weight: $fw-bold;
+  }
+}
+
+.job-position-title {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  &:hover {
+    color: $primary;
+  }
+}
+
+.job-position-meta {
+  color: $grey-800;
+  position: relative;
+  &:not(:last-child) {
+    padding-right: 0.5rem;
+    &::after {
+      content: "";
+      position: absolute;
+      right: -6px;
+      top: 6px;
+      width: 4px;
+      height: 4px;
+      background-color: $grey-800;
+      border-radius: $radii-full;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .job-position {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .job-position-info {
+    padding: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+  .job-position-avatar {
+    position: static;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+  }
+}
